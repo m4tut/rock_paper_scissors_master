@@ -3,16 +3,12 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- displays site properly based on user's device -->
-
         <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
-
         <title>Rock, Paper, Scissors</title>
+
         <link rel="stylesheet" href="style/style.css" />
         <script src="js/script.js" defer></script>
-        <!-- Score
-  Rules
-
+        <!-- 
   You Picked
   The House Picked
 
@@ -22,6 +18,35 @@
   Play Again -->
     </head>
     <body>
-        
+        <div class="block_game">
+            <header class="header">
+                <div class="score">
+                    <h3 class="score_title">Score</h3>
+                    <span class="score_number">0</span>
+                </div>
+            </header>
+
+            <main class="game">
+                <button data-option="paper-option" class="option paper">
+                    <span data-option="paper-option" class="option_inner">
+                        <img src="images/icon-paper.svg" alt="paper" />
+                    </span>
+                </button>
+                <button data-option="scissors-option" class="option scissors">
+                    <span data-option="scissors-option" class="option_inner">
+                        <img src="images/icon-scissors.svg" alt="paper" />
+                    </span>
+                </button>
+                <button data-option="rock-option" class="option rock">
+                    <span data-option="rock-option" class="option_inner">
+                        <img src="images/icon-rock.svg" alt="paper" />
+                    </span>
+                </button>
+            </main>
+        </div>
+        <footer class="footer">
+            <button>rps</button>
+            <button>Rules</button>
+        </footer>
     </body>
 </html>
