@@ -18,35 +18,47 @@
   Play Again -->
     </head>
     <body>
-        <div class="block_game">
-            <header class="header">
-                <div class="score">
-                    <h3 class="score_title">Score</h3>
-                    <span class="score_number">0</span>
-                </div>
-            </header>
+        <header class="header">
+            <div class="score">
+                <h3 class="score_title">Score</h3>
+                <span class="score_number">0</span>
+            </div>
+        </header>
 
-            <main class="game">
-                <button data-option="paper-option" class="option paper">
-                    <span data-option="paper-option" class="option_inner">
-                        <img src="images/icon-paper.svg" alt="paper" />
-                    </span>
-                </button>
-                <button data-option="scissors-option" class="option scissors">
-                    <span data-option="scissors-option" class="option_inner">
-                        <img src="images/icon-scissors.svg" alt="paper" />
-                    </span>
-                </button>
-                <button data-option="rock-option" class="option rock">
-                    <span data-option="rock-option" class="option_inner">
-                        <img src="images/icon-rock.svg" alt="paper" />
-                    </span>
-                </button>
-            </main>
-        </div>
+        <main class="main">
+            <button data-option="paper-option" class="option paper">
+                <span data-option="paper-option" class="option_inner">
+                    <img src="images/icon-paper.svg" alt="paper" />
+                </span>
+            </button>
+            <button data-option="scissors-option" class="option scissors">
+                <span data-option="scissors-option" class="option_inner">
+                    <img src="images/icon-scissors.svg" alt="paper" />
+                </span>
+            </button>
+            <button data-option="rock-option" class="option rock">
+                <span data-option="rock-option" class="option_inner">
+                    <img src="images/icon-rock.svg" alt="paper" />
+                </span>
+            </button>
+        </main>
+
         <footer class="footer">
             <button>rps</button>
             <button>Rules</button>
         </footer>
+
+        <!-- modal window -->
+        <div class="rules">
+            <div class="rules_inner">
+                <div class="rules_header">
+                    <h1 class="rules_title">rules</h1>
+                    <button class="rules_close">
+                        <img src="images/icon-close.svg" alt="close" />
+                    </button>
+                </div>
+                <img class="img_rules" src="images/image-rules.svg" alt="rules">
+            </div>
+        </div>
     </body>
 </html>
