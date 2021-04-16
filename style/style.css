@@ -212,15 +212,19 @@ button {
 
 /* RULES */
 .rules {
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     top: 0;
-    height: 100%;
+    height: 0;
     width: 100%;
+    background-color: rgba(0, 0, 0, 50%);   
+    transition: height 1s;
+}
 
-    background-color: rgba(0, 0, 0, 50%);
+.rules_active {
+    height: 100%;
 }
 
 .rules_inner {
@@ -229,6 +233,12 @@ button {
     padding: 40px;
     border-radius: 10px;
     background-color: white;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.rules_active .rules_inner {
+    opacity: 1;
 }
 
 .rules_header {
