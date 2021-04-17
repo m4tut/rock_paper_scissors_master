@@ -3,19 +3,10 @@
 :root {
     /* ### Primary */
     --scissorsColor: hsl(39, 89%, 49%);
-    --scissorsShadow: hsl(40, 84%, 53%);
-
     --paperColor: hsl(230, 89%, 62%);
-    --paperShadow: hsl(230, 89%, 65%);
-
     --rockColor: hsl(349, 71%, 52%);
-    --rockShadow: hsl(349, 70%, 56%);
-
     --lizardColor: hsl(261, 73%, 60%);
-    --lizardShadow: hsl(261, 72%, 63%);
-
     --cyanColor: hsl(189, 59%, 53%);
-    --cyanShadow: hsl(189, 58%, 57%);
 
     /* ### Neutral */
     --darkText: hsl(229, 25%, 31%);
@@ -52,10 +43,6 @@ button {
     border: none;
     outline: none;
     font-family: inherit;
-}
-
-.block_game {
-    width: 705px;
 }
 
 /* header */
@@ -151,6 +138,22 @@ button {
     background-color: var(--rockColor);
 }
 
+.lizard {
+    display: none;
+    position: absolute;
+    bottom: 15px;
+    left: 180px;
+    background-color: var(--lizardColor);
+}
+
+.spock {
+    display: none;
+    position: absolute;
+    top: 110px;
+    left: 125px;
+    background-color: var(--cyanColor);
+}
+
 .option_inner {
     display: block;
     width: 150px;
@@ -188,7 +191,6 @@ button {
     font-size: 1.1em;
     font-weight: 700;
     text-transform: uppercase;
-    font-family: inherit;
     border-radius: 10px;
     letter-spacing: 0.15em;
     margin: 1em auto;
@@ -219,8 +221,13 @@ button {
     top: 0;
     height: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 50%);   
+    background-color: rgba(0, 0, 0, 50%);
     transition: height 1s;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .rules_active {
@@ -228,8 +235,8 @@ button {
 }
 
 .rules_inner {
-    width: 400px;
-    height: 415px;
+    min-width: 400px;
+    min-height: 415px;
     padding: 40px;
     border-radius: 10px;
     background-color: white;
@@ -259,6 +266,80 @@ button {
     background-color: transparent;
 }
 
+.rules_close svg path {
+    transition: fill 0.2s, opacity 0.2s;
+}
+
+.rules_close:hover svg path {
+    fill: var(--darkText);
+    opacity: 1;
+}
+
 .img_rules {
     margin-top: 30px;
+}
+
+/* bonus game */
+.bonus_game .header::before {
+    width: 115px;
+    height: 114px;
+    background-image: url(../images/logo-bonus.svg);
+}
+
+.bonus_game .main {
+    background-image: url(../images/bg-pentagon.svg);
+}
+
+.bonus_game .option {
+    width: 150px;
+    height: 150px;
+
+    -webkit-box-shadow: inset 0 -0.3rem rgb(0 0 0 / 20%);
+    box-shadow: inset 0 -0.3rem rgb(0 0 0 / 20%);
+}
+
+.bonus_game .option_inner {
+    width: 120px;
+    height: 120px;
+
+    -webkit-box-shadow: inset 0 0.3rem rgb(0 0 0 / 20%);
+    box-shadow: inset 0 0.3rem rgb(0 0 0 / 20%);
+}
+
+.bonus_game .paper {
+    position: absolute;
+    top: 110px;
+    left: 425px;
+    background-color: var(--paperColor);
+}
+
+.bonus_game .scissors {
+    position: absolute;
+    top: 0;
+    right: 280px;
+    background-color: var(--scissorsColor);
+}
+
+.bonus_game .rock {
+    position: absolute;
+    bottom: 15px;
+    left: 375px;
+
+    background-color: var(--rockColor);
+}
+
+.bonus_game .lizard {
+    display: flex;
+}
+
+.bonus_game .spock {
+    display: flex;
+}
+
+.bonus_game .lizard {
+    display: flex;
+}
+
+.bonus_game .spock {
+    display: flex;
 }
