@@ -62,7 +62,7 @@ button {
     content: '';
     width: 162px;
     height: 99px;
-    background-image: url(../images/logo.svg);
+    background: url(../images/logo.svg) no-repeat center;
 }
 
 .score {
@@ -342,4 +342,199 @@ button {
 
 .bonus_game .spock {
     display: flex;
+}
+
+/* media */
+@media (max-width: 755px) {
+    /* header */
+    .header {
+        width: 310px;
+        height: 100px;
+        padding: 0;
+        border-width: 3px;
+        border-radius: 10px;
+    }
+
+    .header::before {
+        background-size: 65%;
+    }
+
+    .score {
+        height: 70px;
+        width: 80px;
+        border-radius: 5px;
+        margin-right: 15px;
+    }
+
+    .score_title {
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    .score_number {
+        font-size: 2rem;
+    }
+
+    /* main */
+    .main {
+        width: 310px;
+        height: 250px;
+        margin-top: 110px;
+        margin-bottom: 60px;
+        background-size: 80%;
+    }
+
+    .bonus_game .main {
+        height: 235px;
+        margin-top: 70px;
+        margin-bottom: 70px;
+    }
+
+    .option {
+        height: 130px;
+        width: 130px;
+
+        -webkit-box-shadow: inset 0 -0.3rem rgb(0 0 0 / 20%);
+        box-shadow: inset 0 -0.3rem rgb(0 0 0 / 20%);
+    }
+
+    .bonus_game .option {
+        height: 100px;
+        width: 100px;
+
+        -webkit-box-shadow: inset 0 -0.25rem rgb(0 0 0 / 20%);
+        box-shadow: inset 0 -0.25rem rgb(0 0 0 / 20%);
+    }
+
+    .option_inner {
+        width: 100px;
+        height: 100px;
+
+        -webkit-box-shadow: inset 0 0.3rem rgb(0 0 0 / 20%);
+        box-shadow: inset 0 0.3rem rgb(0 0 0 / 20%);
+    }
+
+    .bonus_game .option_inner {
+        width: 80px;
+        height: 80px;
+
+        -webkit-box-shadow: inset 0 0.25rem rgb(0 0 0 / 20%);
+        box-shadow: inset 0 0.25rem rgb(0 0 0 / 20%);
+    }
+
+    .bonus_game .option_inner img {
+        display: block;
+        width: 50%;
+    }
+
+    .paper {
+        top: -30px;
+        left: 180px;
+    }
+
+    .bonus_game .paper {
+        top: 40px;
+        left: 210px;
+    }
+
+    .scissors {
+        top: -30px;
+        right: 180px;
+    }
+
+    .bonus_game .scissors {
+        top: -30px;
+        right: 105px;
+    }
+
+    .rock {
+        bottom: 0px;
+        left: 90px;
+    }
+
+    .bonus_game .rock {
+        bottom: -35px;
+        left: 35px;
+    }
+
+    .lizard {
+        bottom: -35px;
+        left: 180px;
+    }
+
+    .spock {
+        top: 40px;
+        left: 0;
+    }
+
+    /* footer */
+    .footer {
+        position: relative;
+        bottom: 0;
+        right: 0;
+    }
+
+    .footer button {
+        border: 2px solid white;
+        font-size: 1em;
+        letter-spacing: 0.1em;
+        margin: 0.5em auto;
+    }
+
+    .footer button:last-child {
+        margin-bottom: 40px;
+    }
+
+    .rules_inner {
+        min-height: 0;
+        min-width: 0;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        border-radius: 0;
+        margin-top: 30px;
+    }
+
+    .img_rules {
+        display: block;
+        width: 280px;
+        height: auto;
+        margin: 30px auto;
+    }
+}
+
+@media (max-width: 375px) {
+    /* main */
+    .main {
+        margin-top: 60px;
+        margin-bottom: 50px;
+    }
+
+    .bonus_game .main {
+        margin-top: 65px;
+        margin-bottom: 65px;
+    }
+
+    /* footer */
+
+    .footer button {
+        width: 110px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 320px) {
+    .main {
+        margin-top: 60px;
+        margin-bottom: 40px;
+    }
+
+    .bonus_game .main {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    .rules_active {
+        height: 116%;
+    }
 }
