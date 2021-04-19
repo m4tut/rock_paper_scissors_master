@@ -270,19 +270,44 @@ button {
     position: relative;
 }
 
+.black_circle {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.you_picked_block,
 .the_house_picked_block {
-    
+    position: relative;
+}
+
+.win_option::before,
+.win_option::after,
+.win_option div {
+    content: '';
+    position: absolute;
+    bottom: 50%;
+    right: 50%;
+    z-index: -1;
+    transform: translate(50%, 50%);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.02);
 }
 
 .win_option::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 600px;
-    height: 600px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
+    width: 700px;
+    height: 700px;
+}
+
+.win_option::after {
+    width: 550px;
+    height: 550px;
+}
+
+.win_option div {
+    width: 400px;
+    height: 400px;
 }
 
 /* footer */
@@ -328,7 +353,7 @@ button {
 
 /* RULES */
 .rules {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     position: absolute;

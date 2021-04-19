@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const rulesCloseElem = document.querySelector('.rules_close');
 
     const escapeHandler = (event) => {
-        console.log('gg');
         if (event.code == 'Escape') {
             rulesElem.classList.remove('rules_active');
         }
@@ -16,7 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const openRules = () => {
         rulesBtnElem.addEventListener('click', () => {
-            rulesElem.classList.add('rules_active');
+            rulesElem.style.display = 'flex';
+            setTimeout(() => {
+                rulesElem.classList.add('rules_active');
+            }, 1);
             document.addEventListener('keydown', escapeHandler);
         });
     };
@@ -24,6 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeRules = () => {
         rulesCloseElem.addEventListener('click', () => {
             rulesElem.classList.remove('rules_active');
+            setTimeout(() => {
+                rulesElem.style.display = 'none';
+            }, 1000);
             document.removeEventListener('keydown', escapeHandler);
         });
 
@@ -31,6 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const target = event.target;
             if (target.classList.contains('rules_active')) {
                 rulesElem.classList.remove('rules_active');
+                setTimeout(() => {
+                    rulesElem.style.display = 'none';
+                }, 1000);
                 document.removeEventListener('keydown', escapeHandler);
             }
         });
@@ -65,7 +73,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const mainElem = document.querySelector('.main');
         const mainGameElem = document.querySelector('.main_game');
         const youPickedBlockElem = document.querySelector('.you_picked_block');
+        const theHousePickedBlockElem = document.querySelector('.the_house_picked_block');
         const playAgainElem = document.getElementById('play_again');
+        const totalTextElem = document.getElementById('total_text');
         let btnElem;
         let truefalse = 1;
         const youWin = 'You Win';
@@ -85,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     setTimeout(() => {
                         mainGameElem.style.opacity = '1';
-                    }, 800);
+                    }, 600);
 
                     youPickedBlockElem.innerHTML = item.outerHTML;
                     btnElem = item.dataset.option;
@@ -106,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             setTimeout(() => {
                 mainElem.style.opacity = '1';
-            }, 800);
+            }, 600);
 
             truefalse = 1;
         });
