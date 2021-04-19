@@ -8,15 +8,8 @@
 
         <link rel="stylesheet" href="style/style.css" />
         <script src="js/script.js" defer></script>
-        <!-- 
-  You Picked
-  The House Picked
-
-  You Win
-  You Lose
-
-  Play Again -->
     </head>
+    
     <body>
         <header class="header">
             <div class="score">
@@ -31,11 +24,13 @@
                     <img src="images/icon-paper.svg" alt="paper" />
                 </span>
             </button>
+
             <button data-option="scissors-option" class="option scissors">
                 <span data-option="scissors-option" class="option_inner">
                     <img src="images/icon-scissors.svg" alt="scissors" />
                 </span>
             </button>
+
             <button data-option="rock-option" class="option rock">
                 <span data-option="rock-option" class="option_inner">
                     <img src="images/icon-rock.svg" alt="rock" />
@@ -48,11 +43,34 @@
                 </span>
             </button>
 
-            <button data-option="rock-option" class="option spock">
-                <span data-option="rock-option" class="option_inner">
+            <button data-option="spock-option" class="option spock">
+                <span data-option="spock-option" class="option_inner">
                     <img src="images/icon-spock.svg" alt="spock" />
                 </span>
             </button>
+        </main>
+
+        <!-- window game -->
+        <main class="main_game active_new_game">
+            <div class="you_picked">
+                <h2 class="main_game_title">You Picked</h2>
+                <div class="you_picked_block"></div>
+            </div>
+            <div class="new_game_block">
+                <h1></h1>
+                <button id="play_again">Play Again</button>
+            </div>
+            <div class="the_house_picked">
+                <h2 class="main_game_title">The House Picked</h2>
+                <div class="the_house_picked_block">
+                    <!-- <button data-option="spock-option" class="option spock">
+                        <span data-option="spock-option" class="option_inner">
+                            <img src="images/icon-spock.svg" alt="spock" />
+                        </span>
+                    </button> -->
+                </div>
+            </div>
+            <!-- win_option -->
         </main>
 
         <footer class="footer">
@@ -60,7 +78,7 @@
             <button id="rules_btn">Rules</button>
         </footer>
 
-        <!-- modal window -->
+        <!-- modal window rules -->
         <div class="rules">
             <div class="rules_inner">
                 <div class="rules_header">
