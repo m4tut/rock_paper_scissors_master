@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             rulesElem.style.display = 'flex';
             setTimeout(() => {
                 rulesElem.classList.add('rules_active');
-            }, 1);
+            }, 100);
             document.addEventListener('keydown', escapeHandler);
         });
     };
@@ -89,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function winLoseTie(win, lose) {
         let rand = randomInteger(0, 2);
-        console.log(optionElem);
         youPickedBlockElem.classList.remove('win_option');
         theHousePickedBlockElem.classList.remove('win_option');
         if (optionElem[rand].dataset.option == win) {
@@ -99,6 +98,41 @@ document.addEventListener('DOMContentLoaded', () => {
                 scoreNumberElem.textContent = Number(scoreNumberElem.textContent) + Number(1);
             }, 3000);
         } else if (optionElem[rand].dataset.option == lose) {
+            totalTextElem.textContent = youLose;
+            setTimeout(() => {
+                theHousePickedBlockElem.classList.add('win_option');
+                scoreNumberElem.textContent = '0';
+            }, 3000);
+        } else {
+            totalTextElem.textContent = itsATie;
+        }
+
+        setTimeout(() => {
+            theHousePickedBlockElem.innerHTML = '<div></div>' + optionElem[rand].outerHTML;
+            theHousePickedBlockElem.style.opacity = '1';
+        }, 1500);
+
+        setTimeout(() => {
+            mainGameElem.classList.add('active_new_game');
+        }, 2000);
+
+        setTimeout(() => {
+            newGameBlockElem.style.opacity = '1';
+        }, 3000);
+    }
+
+    function winLoseTieBonus(win1, win2, lose1, lose2) {
+        let rand = randomInteger(0, 4);
+        youPickedBlockElem.classList.remove('win_option');
+        theHousePickedBlockElem.classList.remove('win_option');
+        
+        if (optionElem[rand].dataset.option == win1 || optionElem[rand].dataset.option == win2) {
+            totalTextElem.textContent = youWin;
+            setTimeout(() => {
+                youPickedBlockElem.classList.add('win_option');
+                scoreNumberElem.textContent = Number(scoreNumberElem.textContent) + Number(1);
+            }, 3000);
+        } else if (optionElem[rand].dataset.option == lose1 || optionElem[rand].dataset.option == lose2) {
             totalTextElem.textContent = youLose;
             setTimeout(() => {
                 theHousePickedBlockElem.classList.add('win_option');
@@ -137,7 +171,27 @@ document.addEventListener('DOMContentLoaded', () => {
                     break;
             }
         } else {
-            let rand = randomInteger(0, 4);
+            switch (btn) {
+                case 'paper-option':
+                    winLoseTieBonus('rock-option', 'spock-option', 'scissors-option', 'lizard-option');
+                    break;
+
+                case 'scissors-option':
+                    winLoseTieBonus('paper-option', 'lizard-option', 'rock-option', 'spock-option');
+                    break;
+
+                case 'rock-option':
+                    winLoseTieBonus('scissors-option', 'lizard-option', 'paper-option', 'spock-option');
+                    break;
+
+                case 'lizard-option':
+                    winLoseTieBonus('paper-option', 'spock-option', 'rock-option', 'scissors-option');
+                    break;
+
+                case 'spock-option':
+                    winLoseTieBonus('scissors-option', 'rock-option', 'paper-option', 'lizard-option');
+                    break;
+            }
         }
     };
 
@@ -146,14 +200,10 @@ document.addEventListener('DOMContentLoaded', () => {
             item.addEventListener('click', () => {
                 if (truefalse) {
                     mainElem.style.opacity = '0';
-
-                    setTimeout(() => {
-                        mainElem.style.display = 'none';
-                    }, 500);
-
                     mainGameElem.style.display = 'flex';
 
                     setTimeout(() => {
+                        mainElem.style.display = 'none';
                         mainGameElem.style.opacity = '1';
                     }, 600);
 
@@ -168,9 +218,6 @@ document.addEventListener('DOMContentLoaded', () => {
             mainGameElem.style.opacity = '0';
             setTimeout(() => {
                 mainGameElem.style.display = 'none';
-            }, 500);
-
-            setTimeout(() => {
                 mainElem.style.display = 'block';
             }, 500);
 
@@ -181,7 +228,10 @@ document.addEventListener('DOMContentLoaded', () => {
             totalTextElem.textContent = '';
             mainGameElem.classList.remove('active_new_game');
             newGameBlockElem.style.opacity = '0';
-            theHousePickedBlockElem.innerHTML = '<div class="black_circle"></div>';
+            setTimeout(() => {
+                theHousePickedBlockElem.innerHTML = '<div class="black_circle"></div>';
+            }, 500);
+            theHousePickedBlockElem.style.opacity = '0';
             truefalse = 1;
         });
     };
