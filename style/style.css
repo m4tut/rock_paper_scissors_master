@@ -33,6 +33,8 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    position: relative;
+    overflow: hidden;
 }
 
 body {
@@ -42,8 +44,6 @@ body {
     background-image: var(--radialGradient);
     position: relative;
     padding-top: 70px;
-
-    overflow: hidden;
 }
 
 button {
@@ -185,7 +185,7 @@ button {
     transition: opacity 1s, width 1s;
 
     width: 705px;
-    height: 400px;
+    height: auto;
     margin: 0 auto;
     margin-top: 70px;
     position: relative;
@@ -245,15 +245,18 @@ button {
     color: white;
     letter-spacing: 0.15rem;
     display: none;
+    opacity: 0;
+    transition: opacity 1s;
 }
 
 .active_new_game .new_game_block {
     display: block;
 }
 
-.new_game_block h1 {
+#total_text {
     font-size: 3rem;
     margin-bottom: 10px;
+    margin-top: 60px;
 }
 
 #play_again {
@@ -273,6 +276,8 @@ button {
 .black_circle {
     width: 230px;
     height: 230px;
+    margin-top: 80px;
+    margin-bottom: 35px;
     border-radius: 50%;
     background-color: rgba(0, 0, 0, 0.15);
 }
@@ -476,6 +481,50 @@ button {
 }
 
 /* media */
+@media (max-width: 1024px) {
+    /* window game */
+    .main_game {
+        width: 550px;
+    }
+
+    .active_new_game {
+        width: 705px;
+    }
+
+    .main_game .option,
+    .bonus_game .main_game .option {
+        width: 200px;
+        height: 200px;
+
+        -webkit-box-shadow: inset 0 -0.3rem rgb(0 0 0 / 20%);
+        box-shadow: inset 0 -0.3rem rgb(0 0 0 / 20%);
+    }
+
+    .main_game .option_inner,
+    .bonus_game .main_game .option_inner {
+        width: 160px;
+        height: 160px;
+
+        -webkit-box-shadow: inset 0 0.3rem rgb(0 0 0 / 20%);
+        box-shadow: inset 0 0.3rem rgb(0 0 0 / 20%);
+    }
+
+    .main_game_title {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+
+    .new_game_block h1 {
+        font-size: 2rem;
+    }
+
+    .black_circle {
+        width: 180px;
+        height: 180px;
+        margin-top: 40px;
+    }
+}
+
 @media (max-width: 755px) {
     body {
         overflow: scroll;
@@ -601,6 +650,42 @@ button {
         top: 40px;
         left: 0;
     }
+
+    /* window game */
+    /* .main_game {
+        width: 550px;
+    }
+
+    .active_new_game {
+        width: 705px;
+    }
+
+    .main_game .option,
+    .bonus_game .main_game .option {
+        width: 200px;
+        height: 200px;
+
+        -webkit-box-shadow: inset 0 -0.3rem rgb(0 0 0 / 20%);
+        box-shadow: inset 0 -0.3rem rgb(0 0 0 / 20%);
+    }
+
+    .main_game .option_inner,
+    .bonus_game .main_game .option_inner {
+        width: 160px;
+        height: 160px;
+
+        -webkit-box-shadow: inset 0 0.3rem rgb(0 0 0 / 20%);
+        box-shadow: inset 0 0.3rem rgb(0 0 0 / 20%);
+    }
+
+    .main_game_title {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+
+    .new_game_block h1 {
+        font-size: 2rem;
+    } */
 
     /* footer */
     .footer {

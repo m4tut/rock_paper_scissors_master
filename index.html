@@ -51,27 +51,19 @@
         </main>
 
         <!-- window game -->
-        <!-- !!!!!!!!!!!!! не забыть убрать active_new_game !!!!!!!!!!!!!!! -->
-        <main class="main_game active_new_game"> 
+        <main class="main_game"> 
             <div class="you_picked ">
                 <h2 class="main_game_title">You Picked</h2>
                 <div class="you_picked_block"></div>
             </div>
             <div class="new_game_block">
-                <h1 id="total_text"></h1>
+                <h1 id="total_text">You Win</h1>
                 <button id="play_again">Play Again</button>
             </div>
             <div class="the_house_picked">
                 <h2 class="main_game_title">The House Picked</h2>
-                <!-- !!!!не забыть убрать win_option !!!!!!! -->
-                <div class="the_house_picked_block win_option">
-                    <!-- <div class="black_circle"></div> -->
-                    <!-- <div></div> для внешнего круга-->
-                    <button data-option="scissors-option" class="option scissors">
-                        <span data-option="scissors-option" class="option_inner">
-                            <img src="images/icon-scissors.svg" alt="scissors" />
-                        </span>
-                    </button>
+                <div class="the_house_picked_block">
+                    <div class="black_circle"></div>
                 </div>
             </div>
         </main>
