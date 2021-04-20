@@ -276,8 +276,7 @@ button {
 .black_circle {
     width: 230px;
     height: 230px;
-    margin-top: 80px;
-    margin-bottom: 35px;
+    margin: 80px 35px 35px 35px;
     border-radius: 50%;
     background-color: rgba(0, 0, 0, 0.15);
 }
@@ -472,11 +471,11 @@ button {
     display: flex;
 }
 
-.bonus_game .lizard {
+.active_new_game .lizard {
     display: flex;
 }
 
-.bonus_game .spock {
+.active_new_game .spock {
     display: flex;
 }
 
@@ -514,20 +513,35 @@ button {
         margin-bottom: 30px;
     }
 
-    .new_game_block h1 {
+    #total_text {
         font-size: 2rem;
     }
 
     .black_circle {
         width: 180px;
         height: 180px;
-        margin-top: 40px;
+        margin: 40px 10px 10px 10px;
+    }
+
+    .win_option div {
+        width: 260px;
+        height: 260px;
+    }
+
+    .win_option::before {
+        width: 450px;
+        height: 450px;
+    }
+
+    .win_option::after {
+        width: 340px;
+        height: 340px;
     }
 }
 
 @media (max-width: 755px) {
     body {
-        overflow: scroll;
+        overflow-y: scroll;
     }
 
     /* header */
@@ -652,40 +666,70 @@ button {
     }
 
     /* window game */
-    /* .main_game {
-        width: 550px;
+    .main_game {
+        width: 280px;
     }
 
     .active_new_game {
-        width: 705px;
+        width: 315px;
+        margin-bottom: 150px;
+        margin-top: 50px;
     }
 
     .main_game .option,
     .bonus_game .main_game .option {
-        width: 200px;
-        height: 200px;
+        width: 100px;
+        height: 100px;
 
-        -webkit-box-shadow: inset 0 -0.3rem rgb(0 0 0 / 20%);
-        box-shadow: inset 0 -0.3rem rgb(0 0 0 / 20%);
+        -webkit-box-shadow: inset 0 -0.2rem rgb(0 0 0 / 20%);
+        box-shadow: inset 0 -0.2rem rgb(0 0 0 / 20%);
     }
 
     .main_game .option_inner,
     .bonus_game .main_game .option_inner {
-        width: 160px;
-        height: 160px;
+        width: 80px;
+        height: 80px;
 
-        -webkit-box-shadow: inset 0 0.3rem rgb(0 0 0 / 20%);
-        box-shadow: inset 0 0.3rem rgb(0 0 0 / 20%);
+        -webkit-box-shadow: inset 0 0.2rem rgb(0 0 0 / 20%);
+        box-shadow: inset 0 0.2rem rgb(0 0 0 / 20%);
+    }
+
+    .black_circle {
+        width: 80px;
+        height: 80px;
+        margin: 10px;
     }
 
     .main_game_title {
-        font-size: 1.2rem;
-        margin-bottom: 30px;
+        font-size: 0.9rem;
+        margin-top: 15px;
+        letter-spacing: 0.1rem;
+        font-weight: 600;
     }
 
-    .new_game_block h1 {
+    .you_picked,
+    .the_house_picked {
+        display: flex;
+        flex-flow: wrap;
+        justify-content: center;
+        width: 50%;
+    }
+
+    .main_game_title:nth-child(1) {
+        order: 2;
+    }
+
+    .active_new_game .new_game_block {
+        position: absolute;
+        left: 50%;
+        bottom: -110px;
+        margin: 0;
+        transform: translateX(-50%);
+    }
+
+    #total_text {
         font-size: 2rem;
-    } */
+    }
 
     /* footer */
     .footer {
@@ -721,6 +765,21 @@ button {
         height: auto;
         margin: 30px auto;
     }
+
+    .win_option div {
+        width: 150px;
+        height: 150px;
+    }
+
+    .win_option::before {
+        width: 280px;
+        height: 280px;
+    }
+
+    .win_option::after {
+        width: 210px;
+        height: 210px;
+    }
 }
 
 @media (max-width: 375px) {
@@ -755,6 +814,6 @@ button {
     }
 
     .rules_active {
-        height: 116%;
+        height: 120%;
     }
 }

@@ -109,7 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setTimeout(() => {
             theHousePickedBlockElem.innerHTML = '<div></div>' + optionElem[rand].outerHTML;
-            theHousePickedBlockElem.style.opacity = '1';
         }, 1500);
 
         setTimeout(() => {
@@ -125,7 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
         let rand = randomInteger(0, 4);
         youPickedBlockElem.classList.remove('win_option');
         theHousePickedBlockElem.classList.remove('win_option');
-        
         if (optionElem[rand].dataset.option == win1 || optionElem[rand].dataset.option == win2) {
             totalTextElem.textContent = youWin;
             setTimeout(() => {
@@ -231,7 +229,6 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 theHousePickedBlockElem.innerHTML = '<div class="black_circle"></div>';
             }, 500);
-            theHousePickedBlockElem.style.opacity = '0';
             truefalse = 1;
         });
     };
