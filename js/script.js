@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             rulesElem.classList.remove('rules_active');
             setTimeout(() => {
                 rulesElem.style.display = 'none';
-            }, 1000);
+            }, 500);
             document.removeEventListener('keydown', escapeHandler);
         });
 
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 rulesElem.classList.remove('rules_active');
                 setTimeout(() => {
                     rulesElem.style.display = 'none';
-                }, 1000);
+                }, 500);
                 document.removeEventListener('keydown', escapeHandler);
             }
         });
@@ -76,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const theHousePickedBlockElem = document.querySelector('.the_house_picked_block');
     const playAgainElem = document.getElementById('play_again');
     const totalTextElem = document.getElementById('total_text');
-    let btnElem;
     let truefalse = 1;
     const youWin = 'You Win';
     const youLose = 'You Lose';
@@ -96,28 +95,28 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 youPickedBlockElem.classList.add('win_option');
                 scoreNumberElem.textContent = Number(scoreNumberElem.textContent) + Number(1);
-            }, 3000);
+            }, 1500);
         } else if (optionElem[rand].dataset.option == lose) {
             totalTextElem.textContent = youLose;
             setTimeout(() => {
                 theHousePickedBlockElem.classList.add('win_option');
                 scoreNumberElem.textContent = '0';
-            }, 3000);
+            }, 1500);
         } else {
             totalTextElem.textContent = itsATie;
         }
 
         setTimeout(() => {
             theHousePickedBlockElem.innerHTML = '<div></div>' + optionElem[rand].outerHTML;
-        }, 1500);
+        }, 1000);
 
         setTimeout(() => {
             mainGameElem.classList.add('active_new_game');
-        }, 2000);
+        }, 1500);
 
         setTimeout(() => {
             newGameBlockElem.style.opacity = '1';
-        }, 3000);
+        }, 1700);
     }
 
     function winLoseTieBonus(win1, win2, lose1, lose2) {
